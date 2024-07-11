@@ -1,0 +1,49 @@
+<ion-header>
+  <!-- Llamado al Menú general de la aplicación sin opción de perfil de usuario -->
+  <ion-toolbar class="barra-menu" color="success">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>MoviBike</ion-title>
+    <ion-buttons side="end" slot="end">
+      <ion-menu-button slot="end" side="end" autoHide="false"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <center>
+    <div>
+      <ion-card>
+        <img src="assets/img/A.jpg" />
+
+        <ion-card-header>
+          <ion-card-title>¡Terminar carrera!</ion-card-title>
+          <ion-card-subtitle>Seleccione la opción para terminar la carrera y se procedera con el fin del arriendo.</ion-card-subtitle>
+        </ion-card-header>
+
+        <ion-card-content>
+          <!-- <ion-label>
+            <h1>Patente identificada:</h1>
+            Mostrar variables de datos enviadas desde otra página (Interpolación)
+            <p *ngIf = "patente">{{patente}}</p>
+          </ion-label> -->
+          <ion-label>
+            <h1>Información:</h1>
+            <p><strong>Patente: </strong>{{patente}}</p>
+            <p><strong>Inicio de arriendo: </strong>{{fechaInicio}}</p>
+        <!--<p><strong>Término de arriendo: </strong>{{fechaTermino}}</p>-->
+            <p><strong>Monto a pagar: </strong>${{monto}}</p>
+          </ion-label>
+        </ion-card-content>
+        <ion-row>
+          <ion-col size="1"></ion-col>
+          <ion-col size="10">
+            <ion-button [routerLink]="['/home']" expand="block" fill="outline" color="success">Terminar arriendo</ion-button>
+          </ion-col>
+          <ion-col size="1"></ion-col>
+        </ion-row>
+      </ion-card>
+    </div>
+  </center>
+</ion-content>

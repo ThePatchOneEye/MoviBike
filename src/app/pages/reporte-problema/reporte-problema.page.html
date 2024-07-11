@@ -1,0 +1,46 @@
+<ion-header>
+  <!-- Llamado al Menú general de la aplicación sin opción de perfil de usuario -->
+  <ion-toolbar class="barra-menu" color="success">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>MoviBike</ion-title>
+    <ion-buttons side="end" slot="end">
+      <ion-menu-button slot="end" side="end" autoHide="false"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>¿Ha detectado un defecto en el servicio?</ion-card-title>
+        <ion-card-subtitle>Puede hacernos saber el problema adjuntando una evidencia fotográfica.</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <div>
+          <ion-label position="stacked" class="ion-padding-bottom" id="text">Tipo de Problema</ion-label>
+          <!-- Guardando la opcion seleccionada: userPerfil -->
+          <ion-select placeholder="Seleccione alguno" required [(ngModel)]="reporte.tipoProblema">
+            <!-- *ngFor: Indica que con la instancia niv del arreglo niveles se recorrerá las cantidades de id del arreglo -->
+            <ion-select-option *ngFor="let tipo of tipoProblema">{{tipo.tipoNombre}}</ion-select-option>
+          </ion-select>
+        </div>
+        <br>
+        <div class="input" style="padding-bottom:15px">
+          <ion-label position="stacked" class="title-form" id="text">Detalle del problema:</ion-label>
+          <ion-textarea type="text" placeholder="Detalle aquí su reporte..." [(ngModel)]="reporte.comentario" required id="text"></ion-textarea>
+        </div>
+        <center>
+          <ion-button expand="block" fill="outline" color="success" (click)="takePicture()">Adjuntar foto</ion-button>
+          <img *ngIf="image" [src]="image" alt="image" style="width: 100%;max-width: 250px;">
+        </center>
+        <br><br><br>
+        <center>
+          <ion-button fill="outline" color="success" (click)="enviarReporte()">Enviar <ion-icon name="send"></ion-icon></ion-button>
+        </center>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

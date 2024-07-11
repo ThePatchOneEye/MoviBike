@@ -1,0 +1,65 @@
+<!-- <ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Actividad 1
+    </ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content [fullscreen]="true">
+
+  <!-- Formulario de Login -->
+  <div id="back-form">
+    <div id="content-form">
+      <ion-row>
+        <ion-col size="2"></ion-col>
+        <ion-col id="title-login" size="8">
+          Iniciar Sesión
+        </ion-col>
+        <ion-col size="2"></ion-col>
+      </ion-row>
+      
+      <!-- Inputs -->
+      <div id="back-input">
+        <div class="input" style="padding-bottom:15px">
+          <ion-label position="stacked" class="title-form">RUT:</ion-label>
+          <ion-input type="text" placeholder="11111111" [(ngModel)]="login.Rut" maxlength=15 minlength=5 required></ion-input>
+        </div>
+        <div class="input">
+          <ion-label position="stacked" class="title-form">Contraseña</ion-label>
+          <ion-input type="password" placeholder="contraseña" [(ngModel)]="login.Contrasena" maxlength=8 minlength=3 required></ion-input>
+        </div>
+      </div>
+      <!-- Botón: Ingresar -->
+      <ion-row>
+        <ion-col size="2"></ion-col>
+        <ion-col size="8">
+          <ion-button id="ingresar" expand="block" fill="outline" color="dark" (click)="ingresar()">Ingresar</ion-button>
+        </ion-col>
+        <ion-col size="2"></ion-col>
+      </ion-row>
+      <!-- Botón: Registro -->
+      <ion-row>
+        <ion-col size="12" id="section-registro">
+          <a id="registro" [routerLink]="['/registro']" ion-button>Registrarme</a>
+        </ion-col>
+      </ion-row>
+      <!-- Botón: Reponer clave -->
+      <ion-row>
+        <ion-col size="12" id="section-reponer">
+          <a id="reponer" [routerLink]="['/contrasena']" ion-button>Recuperar contraseña</a>
+        </ion-col>
+      </ion-row>
+    </div>
+
+    <!-- Botón: Otro Tipo de Usuario -->
+      <ion-row>
+        <ion-col size="12" id="section-reponer">
+          <a id="reponer" [routerLink]="['/login-secundario']" ion-button>¿No eres Cliente?</a>
+        </ion-col>
+      </ion-row>
+
+  </div>
+
+  <!-- Fin Formulario de Login -->
+</ion-content>

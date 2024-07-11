@@ -1,0 +1,41 @@
+<ion-header>
+  <!-- Llamado al Menú general de la aplicación -->
+  <ion-toolbar class="barra-menu" color="success">
+    <ion-title>MoviBike</ion-title>
+    <ion-buttons slot="primary">
+      <ion-menu-button (click)="openAlterno()">
+        <ion-icon name="person-circle-outline"></ion-icon>
+      </ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-header>
+  </ion-header>
+
+  <center>
+    <div>
+      <div style="padding-top:20px;">
+        <!-- <h1 id="title">"Bienvenido {{textoEnviado/login.Email}}"</h1> -->
+      </div>
+      <!-- Opciones principales -->
+      <ion-row>
+        <div class="box">
+          <img src="assets/img/R.png.jpg" />
+          <h2 id="title">Recorrido Activo</h2>
+          <p style="color: #b1b1b1">En estos momentos tienes un arriendo activo, para finalizar la carrera pulsa aqui.
+          <br><br><strong>Bicicleta: {{patenteRecibida}}</strong></p> <br>
+          <button (click)="terminar()">¡Terminar carrera!</button>
+        </div>
+        <div class="box">
+          <h2 id="title">Estacionamientos cercanos</h2>
+          <p style="color: #b1b1b1">¿Quieres arrendar una bicicleta y no sabes donde?,
+            aqui te mostramos los mas cercanos.</p> <br>
+          <button [routerLink]="['/buscar-estacionamiento']">¡Buscar!</button>
+        </div>
+      </ion-row>
+    </div>
+  </center>
+  <br>
+</ion-content>

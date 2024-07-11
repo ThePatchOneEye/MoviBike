@@ -1,0 +1,63 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="login" color="success"></ion-back-button>
+      <!-- <ion-title>inicio</ion-title> -->
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <!-- Formulario de Login Secundario -->
+  <div id="back-form">
+    <div id="content-form">
+      <ion-row>
+        <ion-col size="2"></ion-col>
+        <ion-col id="title-login" size="8">
+          Iniciar Sesión
+        </ion-col>
+        <ion-col size="2"></ion-col>
+      </ion-row>
+      <!-- Tipo de Usuario -->
+      <div id="back-input">
+        <div>
+          <ion-label position="stacked" class="ion-padding-bottom">Tipo de Usuario</ion-label>
+          <!-- Guardando la opcion seleccionada: userPerfil -->
+          <ion-select placeholder="Seleccione nivel" required [(ngModel)]="login.Usuario">
+            <!-- *ngFor: Indica que con la instancia niv del arreglo niveles se recorrerá las cantidades de id del arreglo -->
+            <ion-select-option *ngFor="let cat of categoria">{{cat.tipoUser}}</ion-select-option>
+          </ion-select>
+        </div>
+        <!-- Inputs -->
+        <br>
+        <div class="input" style="padding-bottom:15px">
+          <ion-label position="stacked" class="title-form">RUT:</ion-label>
+          <ion-input type="text" placeholder="11111111" [(ngModel)]="login.Rut" maxlength=15 minlength=5 required></ion-input>
+        </div>
+        <div class="input">
+          <ion-label position="stacked" class="title-form">Contraseña</ion-label>
+          <ion-input type="password" placeholder="contraseña" [(ngModel)]="login.Contrasena" maxlength=8 minlength=3 required></ion-input>
+        </div>
+      </div>
+      <!-- Botón: Ingresar -->
+      <ion-row>
+        <ion-col size="2"></ion-col>
+        <ion-col size="8">
+          <ion-button id="ingresar" expand="block" fill="outline" color="dark" (click)="ingresar()">Ingresar
+          </ion-button>
+        </ion-col>
+        <ion-col size="2"></ion-col>
+      </ion-row>
+      <!-- Botón: Reponer clave -->
+      <ion-row>
+        <ion-col size="12" id="section-reponer">
+          <a id="reponer" [routerLink]="['/contrasena']" ion-button>Recuperar contraseña</a>
+        </ion-col>
+      </ion-row>
+    </div>
+
+  </div>
+
+  <!-- Fin Formulario de Login Secundario -->
+</ion-content>

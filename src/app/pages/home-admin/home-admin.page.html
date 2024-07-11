@@ -1,0 +1,36 @@
+<ion-header>
+  <!-- Llamado al Menú general de la aplicación -->
+  <ion-toolbar class="barra-menu" color="success">
+    <ion-title>MoviBike</ion-title>
+    <ion-buttons slot="primary">
+      <ion-buttons [routerLink]="['/login']">Cerrar Sesión</ion-buttons>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-header>
+  </ion-header>
+
+  <center>  
+    <div>
+      <div style="padding-top:20px;">
+        <!-- <h1 id="title">"Bienvenido {{textoEnviado/login.Email}}"</h1> -->
+      </div>
+      <!-- Opciones principales -->
+      <ion-row>
+        <div class="box">
+          <h2 id="title">Administrar cuentas de clientes</h2>
+          <p style="color: #35393e">Haz click aquí para administrar las cuentas de los usuarios</p> <br>
+          <button [routerLink]="['/mod-datos-cliente']"><ion-icon name="trash-outline"></ion-icon></button>
+        </div>
+        <div class="box">
+          <h2 id="title">Administrar bicicletas</h2>
+          <p style="color: #35393e">Haz click aquí para administrar las bicicletas registradas.</p> <br>
+          <button [routerLink]="['/mod-datos-bici']"><ion-icon name="lock-closed-outline"></ion-icon></button>
+        </div>
+      </ion-row>
+    </div>
+  </center>
+
+</ion-content>

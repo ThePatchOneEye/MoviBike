@@ -1,0 +1,43 @@
+<ion-header>
+  <!-- Llamado al Menú general de la aplicación sin opción de perfil de usuario -->
+  <ion-toolbar class="barra-menu" color="success">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>MoviBike</ion-title>
+    <ion-buttons side="end" slot="end">
+      <ion-menu-button slot="end" side="end" autoHide="false"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <center>
+    <div>
+      <ion-card>
+        <img src="assets/img/R.png.jpg" />
+
+        <ion-card-header>
+          <ion-card-title>¡Arrienda una bicicleta!</ion-card-title>
+          <ion-card-subtitle>Para iniciar con el arriendo de una de nuestras bicicletas deberá ingresar la patente de la bicicleta a utilizar.</ion-card-subtitle>
+        </ion-card-header>
+
+        <ion-card-content>
+          <ion-item>
+            <ion-label position="floating">Patente:</ion-label>
+            <ion-input type="text" [(ngModel)]="arrendar.Patente" maxlength=7 minlength=6></ion-input>
+          </ion-item>
+        </ion-card-content>
+        <br>
+        <ion-row>
+          <ion-col size="2"></ion-col>
+          <ion-col size="8">
+            <ion-label>Nota: Recuerde usar las medidas de seguridad correspondientes.</ion-label>
+            <ion-button expand="block" fill="outline" color="success" (click)="arrendarBici()">Arrendar</ion-button>
+          </ion-col>
+          <ion-col size="2"></ion-col>
+        </ion-row>
+      </ion-card>
+    </div>
+  </center>
+</ion-content>

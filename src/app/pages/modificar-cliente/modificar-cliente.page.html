@@ -1,0 +1,53 @@
+<ion-header>
+  <!-- Llamado al Menú general de la aplicación -->
+  <ion-toolbar class="barra-menu" color="success">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>MoviBike</ion-title>
+  </ion-toolbar>
+</ion-header> 
+  
+  <ion-content> 
+    <div class="ion-padding-vertical"> 
+      <!-- 
+        Se establece un card que contendra un titulo 
+        y un contenido 
+      -->
+      <ion-card class="ion-text-center"> 
+         <ion-card-title class="ion-text-center"> 
+          <ion-label> 
+            <h1>Datos cuenta</h1> 
+          </ion-label> 
+        </ion-card-title> 
+        <ion-card-content>
+          <ion-item> 
+            <ion-label position="floating">Rut</ion-label> 
+            <ion-input type="text" [(ngModel)]="cliente.nroRut" disabled></ion-input> 
+          </ion-item> 
+          <ion-item> 
+            <ion-label position="floating">Nombre</ion-label> 
+            <ion-input type="text" [(ngModel)]="cliente.nombre" disabled></ion-input> 
+          </ion-item>
+          <ion-item> 
+            <ion-label position="floating">Apellido</ion-label> 
+            <ion-input type="text" [(ngModel)]="cliente.apellido" disabled></ion-input> 
+          </ion-item>
+          <ion-item> 
+            <ion-label position="floating">Email</ion-label> 
+            <ion-input type="text" [(ngModel)]="cliente.email" disabled></ion-input> 
+          </ion-item>
+          <ion-item> 
+            <ion-label position="floating">Estado de la cuenta</ion-label> 
+            <ion-select placeholder="Seleccione nivel" [(ngModel)]="cliente.estadoCuenta" required>
+             <!-- *ngFor: Indica que con la instancia niv del arreglo niveles se recorrerá las cantidades de id del arreglo -->
+            <ion-select-option *ngFor="let cat of estadoxd">{{cat.tipoEstadocuenta}}</ion-select-option>
+            </ion-select>
+          </ion-item>
+          
+        </ion-card-content> 
+        <ion-button shape="block" color="success" (click)="editar()">Editar</ion-button> 
+      </ion-card> 
+    </div> 
+  
+  </ion-content> 

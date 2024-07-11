@@ -1,0 +1,7 @@
+{
+  "name": "MoviBike",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

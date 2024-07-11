@@ -1,0 +1,31 @@
+<ion-header>
+  <!-- Llamado al Menú general de la aplicación -->
+  <ion-toolbar class="barra-menu" color="success">
+    <ion-title>MoviBike</ion-title>
+    <ion-buttons slot="primary">
+      <ion-buttons [routerLink]="['/login']">Cerrar Sesión</ion-buttons>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-header>
+  </ion-header>
+
+  <center>  
+    <div>
+      <div style="padding-top:20px;">
+        <!-- <h1 id="title">"Bienvenido {{textoEnviado/login.Email}}"</h1> -->
+      </div>
+      <!-- Opciones principales -->
+      <ion-row>
+        <div class="box">
+          <h2 id="title">Consular tráficos</h2>
+          <p style="color: #35393e">Haz click aquí para iniciar la consulta de trafico de las bicicletas.</p> <br>
+          <button><ion-icon name="map-outline"></ion-icon></button>
+        </div>
+      </ion-row>
+    </div>
+  </center>
+
+</ion-content>

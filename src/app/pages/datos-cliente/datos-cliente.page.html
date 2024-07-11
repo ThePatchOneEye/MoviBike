@@ -1,0 +1,90 @@
+<ion-header>
+  <!-- Llamado al Menú general de la aplicación -->
+  <ion-toolbar class="barra-menu" color="success">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>MoviBike</ion-title>
+    <ion-buttons slot="primary">
+      <ion-menu-button (click)="openAlterno()">
+        <ion-icon name="person-circle-outline"></ion-icon>
+      </ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Tus datos</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      Mantén tus datos actualizados en esta sección para recibir información adecuada de tus movimientos
+      en nuestra app.
+    </ion-card-content>
+  </ion-card>
+
+  
+  <ion-card *ngFor="let item of cliente">
+    <ion-item>
+      <ion-label position="stacked">RUT</ion-label>
+      <!--<ion-input fill="outline" disabled class="deshabilitado" [(ngModel)]="datosCliente.rutEditada">{{item.nroRut}}</ion-input>-->
+      <ion-input fill="outline" disabled class="deshabilitado">{{item.nroRut}}</ion-input>
+    </ion-item>
+    <br>
+    <ion-item>
+      <ion-label position="stacked">Nombre(s)</ion-label>
+      <br>
+      <!-- Aquí debe hacerse un ngModel del nombre que se obtiene con rut del usuario -->
+      <ion-input disabled class="deshabilitado">{{item.nombre}}</ion-input>
+    </ion-item>
+    <br>
+    <ion-item>
+      <ion-label position="stacked">Apellidos</ion-label>
+      <br>
+      <!-- Aquí debe hacerse un ngModel del apellido que se obtiene con rut del usuario -->
+      <ion-input fill="outline" disabled class="deshabilitado">{{item.apellido}}</ion-input>
+    </ion-item>
+    <br>
+    <ion-item>
+      <ion-label position="stacked">Fecha de nacimiento</ion-label>
+      <!-- Aquí debe hacerse un ngModel de la fecha de nacimiento que se obtiene con rut del usuario -->
+      <ion-input type="date" fill="outline" disabled class="deshabilitado">{{item.fechaNacimiento| date:"dd/MM/yyyy"}}</ion-input>
+    </ion-item>
+    <br>
+    <ion-item>
+      <ion-label position="stacked">Comuna</ion-label>
+      <br>
+      <!-- Aquí debe hacerse un ngModel del nombre que se obtiene con rut del usuario -->
+      <ion-input [(ngModel)]="datosCliente.comunaEditada">{{item.comuna}}</ion-input>
+    </ion-item>
+    <br>
+    <ion-item>
+      <ion-label position="stacked">Numero Tarjeta de Crédito</ion-label>
+      <br>
+      <!-- Aquí debe hacerse un ngModel del nombre que se obtiene con rut del usuario -->
+      <ion-input [(ngModel)]="datosCliente.creditoEditada">{{item.nroTarjetaCredito}}</ion-input>
+    </ion-item>
+    <br>
+    <ion-item>
+      <ion-label position="stacked">Numero Tarjeta de Municipalidad</ion-label>
+      <br>
+      <!-- Aquí debe hacerse un ngModel del nombre que se obtiene con rut del usuario -->
+      <ion-input [(ngModel)]="datosCliente.municipalidadEditada">{{item.nroTarjetaMuni}}</ion-input>
+    </ion-item>
+    <br>
+    <ion-item>
+      <ion-label position="stacked">Email</ion-label>
+      <br>
+      <!-- Aquí debe hacerse un ngModel del nombre que se obtiene con rut del usuario -->
+      <ion-input [(ngModel)]="datosCliente.emailEditada">{{item.email}}</ion-input>
+    </ion-item>
+    <br>
+    <center>
+      <ion-button fill="outline" color="success" (click)="actualizarDatosCliente()">Actualizar datos</ion-button>
+    </center>
+    <br><br><br>
+  </ion-card>
+</ion-content>
+

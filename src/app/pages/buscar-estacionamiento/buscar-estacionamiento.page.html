@@ -1,0 +1,24 @@
+<ion-header>
+  <!-- Llamado al Menú general de la aplicación sin opción de perfil de usuario -->
+  <ion-toolbar class="barra-menu" color="success">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>MoviBike</ion-title>
+    <ion-buttons side="end" slot="end">
+      <ion-menu-button slot="end" side="end" autoHide="false"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <br><br><br>
+  <center>
+    <div id="map_canvas"></div>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="danger" (click)="localizar()">
+      <ion-icon name="pin"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  </center>
+</ion-content>
